@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<div class="w-full max-w-md mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
+    <h2 class="text-2xl font-bold mb-4">Profile</h2>
+    
+    <!-- Edit Name -->
+    <div class="mb-6">
+      <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+      <input type="text" id="name" [(ngModel)]="name" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" placeholder="Enter your name">
+    </div>
+    
+    <!-- Old Password -->
+    <div class="mb-6">
+      <label for="old-password" class="block text-sm font-medium text-gray-700">Old Password</label>
+      <input type="password" id="old-password" [(ngModel)]="oldPassword" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" placeholder="Enter old password">
+    </div>
+  
+    <!-- New Password -->
+    <div class="mb-6">
+      <label for="new-password" class="block text-sm font-medium text-gray-700">New Password</label>
+      <input type="password" id="new-password" [(ngModel)]="newPassword" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" placeholder="Enter new password">
+    </div>
+  
+    <!-- Save Changes Button -->
+    <div class="flex justify-end">
+      <button (click)="saveChanges()" class="px-4 py-2 bg-blue-500 text-white rounded-md">Save Changes</button>
+    </div>
+</div>
+  
+  

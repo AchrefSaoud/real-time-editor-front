@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<nav class="sticky top-0 bg-gray-800 p-4 z-10">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <div class="flex-shrink-0">
+      <a href="#" class="text-white text-xl font-bold">Collaborate</a>
+    </div>
+    <div class="hidden md:block">
+      <a href="#" routerLink="home" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md">Home</a>
+      <a href="#" routerLink="contact" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md">Contact</a>
+      <a href="#" routerLink="room" *ngIf="logged" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md">Rooms</a>
+      <a href="#" routerLink="profile" *ngIf="logged" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md">Profile</a>
+    </div>
+    <div class="flex md:hidden">
+      <button class="text-gray-300 hover:text-white focus:outline-none">
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="hidden md:flex md:items-center h-9 md:justify-end">
+      <button (click)="Logout()" *ngIf="logged" type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Logout</button>
+      <a *ngIf="!logged" href="#" routerLink="login" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md">Login</a>
+      <a *ngIf="!logged" href="#" routerLink="register" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md">Register</a>
+    </div>
+  </div>
+</nav>

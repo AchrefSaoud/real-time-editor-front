@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<div class="max-w-md mt-10 p-6 bg-white shadow-md rounded-lg">
+  <h2 class="text-2xl font-semibold mb-6">Create Room</h2>
+  <form (submit)="createRoom(); $event.preventDefault()">
+    <div class="mb-4">
+      <label for="roomName" class="block text-sm font-medium text-gray-700 mb-2">Room Name:</label>
+      <input type="text" id="roomName" [(ngModel)]="roomName" name="roomName" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    </div>
+    <button type="submit" class="w-full py-2 px-4 bg-green-500 text-white font-semibold rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500">Create Room</button>
+  </form>
+  <div *ngIf="message" [ngClass]="messageType === 'success' ? 'bg-green-100 border-green-400 text-green-700' : 'bg-red-100 border-red-400 text-red-700'" class="mt-4 p-4 border rounded">
+    {{ message }}
+  </div>
+  <div *ngIf="roomCode" class="mt-4 p-4 bg-blue-100 border border-blue-400 text-blue-700 rounded-md">
+    <p class="font-semibold">Room Code:</p>
+    <p class="text-lg font-mono">{{ roomCode }}</p>
+    <button (click)="copyRoomCode()" class="mt-2 py-1 px-3 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Copy Code</button>
+  </div>
+</div>
